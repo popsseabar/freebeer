@@ -1,0 +1,438 @@
+---
+---
+
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+::selection {
+    background-color: #9cd8ff;
+    color: #fff;
+    text-shadow: none;
+}
+
+body { background-color: #f7f8fa; }
+
+h2 {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: normal;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: normal;
+}
+
+h4 {
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+p { color: #333; }
+
+.full-width {
+    width: 940px !important;
+}
+
+%rounded {
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+}
+
+.sunny {
+    -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.39);
+       -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.39);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.39);
+}
+
+.container {
+    @extend .full-width;
+    margin: 0 auto;
+    padding: 0 30px;
+    background-color: #fff;
+    .navbar-fixed-top & { background: none; }
+}
+
+
+/******************************************************************************
+ *  Header                                                                    *
+ ******************************************************************************/
+
+#header { display: none; }
+
+
+/******************************************************************************
+ *  Main                                                                      *
+ ******************************************************************************/
+
+#main {
+    position: relative;
+    margin-top: 10px;
+    padding-top: 150px;
+    .container.clearfix {
+        padding-top: 30px;
+    }
+}
+
+
+/******************************************************************************
+ *  Title                                                                     *
+ ******************************************************************************/
+
+.site-heading {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    color: #333;
+    h2 {
+        color: #333;
+        margin-top: 1em;
+        margin-bottom: 0.2em;
+    }
+    a {
+        color: #333;
+        &:hover {
+            color: #333;
+            text-decoration: underline;
+        }
+    }
+}
+
+/******************************************************************************
+ *  Campaign                                                                  *
+ ******************************************************************************/
+
+#campaign div {
+    .container {
+        border-right: 1px solid #d9d9de;
+        border-left: 1px solid #d9d9de;
+    }
+    &:first-child .container {
+        border-top: 1px solid #d9d9de;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+    }
+    &:last-child .container {
+        border-bottom: 1px solid #d9d9de;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+}
+
+
+/******************************************************************************
+ *  Funding Area                                                              *
+ ******************************************************************************/
+
+.campaign_title { display: none; }
+
+#campaign #funding_area {
+    padding: 0;
+    border: none;
+    background: none;
+    #image, #video_image, #image img, #video_image img {
+        width: 640px;
+        height: 480px;
+        line-height: 480px;
+        margin-bottom: 30px;
+    }
+    #backing {
+        float: right;
+        width: 280px;
+        margin: 0;
+        ul { padding: 20px; }
+        .stats {
+            display: block;
+            border: 0;
+            padding: 0;
+            font-size: 48px;
+            line-height: 1.1;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+            span {
+                margin-top: 0;
+                font-size: 14px;
+                color: inherit;
+                text-transform: lowercase;
+            }
+        }
+        #raised_amount span:before { content: "raised "; }
+        #raised_amount span:after { content: "0,000 goal"; }
+        // #raised_amount span::after { content: " goal"; }
+    }
+    #reserve_container {
+        box-sizing: border-box;
+        box-shadow: none;
+        border: none;
+        padding: 0 20px;
+    }
+}
+
+#progress_bg, .progress_text { display: none; }
+
+.blue_button {
+    @extend %rounded;
+    box-sizing: border-box;
+    font-size: 18px;
+    margin-top: 0;
+    width: 100%;
+    background: #00b3f2;
+    transition: background 400ms;
+    &, &:active, &:hover {
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+                box-shadow: none;
+    }
+    &:active { top: 0; }
+    &:hover, &:active, &:focus {
+        background: #00a0d8;
+    }
+}
+
+.call_to_action_description { display: none; }
+
+.share { display: none; }
+
+
+/******************************************************************************
+ *  Campaign Body                                                             *
+ ******************************************************************************/
+
+#campaign #campaign_body {
+    padding: 0;
+    border-bottom: none;
+}
+
+.main_content {
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 0;
+        margin-bottom: 20px;
+        &:last-child {
+            margin-bottom: 30px;
+        }
+    }
+    h4 {
+        position: relative;
+        margin-top: -15px;
+        margin-bottom: 30px;
+    }
+    iframe { margin-top: 20px; }
+}
+
+#second_call_to_action { display: none; }
+
+
+/******************************************************************************
+ *  Sidebar                                                                   *
+ ******************************************************************************/
+
+.project-by {
+    @extend %rounded;
+    float: right;
+    width: 280px;
+    background-color: #e8f6ff;
+    position: relative;
+    margin-top: -127px;
+}
+
+.project-by-logo { padding: 20px; }
+
+.project-by-contact {
+    display: block;
+    border-top: 1px solid #9cd8ff;
+    padding: 15px;
+    background-color: #def2ff;
+    color: #00a0ff;
+    text-align: center;
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    &:nth-child(even) { border-right: 1px solid #9cd8ff; }
+    &:nth-last-child(2) { border-bottom-left-radius: 6px; }
+    &:last-child { border-bottom-right-radius: 6px; }
+    &:hover, &:active, &:focus {
+        background-color: inherit;
+        text-decoration: none;
+    }
+}
+
+.rewards_sidebar {
+    margin-top: 210px;
+    h3 { display: none; }
+}
+
+#campaign #campaign_body .rewards_sidebar ul li {
+    &:last-child a {
+        @extend %rounded;
+    }
+    a {
+        background: #f7f8fa;
+        position: relative;
+        padding: 25px;
+        &:after {
+            @extend %rounded;
+            position: absolute;
+            content: "Become A Founder";
+            color: #fff;
+            font-size: 32px;
+            text-align: center;
+            width: 100%;
+            padding-top: 89px;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(#00b3f2,0);
+            opacity: 0;
+            transition: all 400ms;
+        }
+        &:hover, &:active, &:focus {
+            background: #f7f8fa;
+            &:after {
+                font-size: 24px;
+                padding-top: 90px;
+                background: rgba(#00b3f2,0.9);
+                opacity: 1;
+            }
+        }
+        p.price {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 12px;
+            &:before {
+                content: "Pledge ";
+            }
+        }
+        p.title { display: none; }
+        div.reward-delivery { margin-bottom: 4px; }
+        p.claimed { font-size: 12px; }
+    }
+}
+
+
+/******************************************************************************
+ * FAQ                                                                        *
+ ******************************************************************************/
+
+#campaign #faq {
+    padding: 0;
+    border: none;
+    .center {
+        text-align: left;
+    }
+    .container {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    ul {
+        margin: 0 0 20px 20px;
+        li {
+            padding-left: 0;
+            background: none;
+            margin-bottom: 20px;
+            details {
+                &:before {
+                    margin: 1px 0 0 -19px;
+                    float: left;
+                    content: "\25b6";
+                    color: #0088d6;
+                    -webkit-transition: all 0.4s ease;
+                    -moz-transition: all 0.4s ease;
+                    -ms-transition: all 0.4s ease;
+                    -o-transition: all 0.4s ease;
+                }
+                &[open]:before {
+                    /* content: "\25BC"; */
+                    -webkit-transform: rotate(90deg);
+                    -moz-transform: rotate(90deg);
+                    -ms-transform: rotate(90deg);
+                    -o-transform: rotate(90deg);
+                }
+            }
+            p {
+                font-size: 16px;
+                color: #4b4b4b;
+            }
+        }
+    }
+}
+
+summary {
+    font-size: 16px;
+    &:hover { text-decoration: none; }
+}
+
+
+/******************************************************************************
+ * Footer                                                                     *
+ ******************************************************************************/
+
+#footer {
+    background: none;
+    box-shadow: none;
+    text-align: center;
+    padding-top: 18px;
+    p, a, a:hover { color: #4b4b4b; }
+    p { margin-bottom: 0; }
+    a:hover { text-decoration: underline; }
+    .container {
+        width: auto;
+        background: none;
+    }
+    .pull-right { float: none; }
+}
+
+
+/******************************************************************************
+ * Powered By                                                                 *
+ ******************************************************************************/
+
+#powered {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+/******************************************************************************
+ * Checkout                                                                   *
+ ******************************************************************************/
+
+#checkout {
+    position: relative;
+    margin-top: -120px;
+    .container { padding: 30px; }
+    .main_content {
+        h4 { display: none; }
+        .amount_section { display: none; }
+        #reward_select ul li {
+            &.active:first-child { display: none }
+            &.reward_option {
+                label {
+                    position: relative;
+                    color: transparent;
+                    &:after {
+                        content: "$1,000";
+                        position: absolute;
+                        display: block;
+                        top: 0;
+                        color: #262626;
+                    }
+                }
+                .reward_edit { display: none !important; }
+            }
+        }
+    }
+}
+
+
